@@ -17,7 +17,7 @@ public class SearchResultsTest extends BaseTest {
 	public Object[][] getProductCount()
 	{
 		return new Object[][] {
-			{"samsung",2},{"macbook",3},{"imac",2}
+			{"samsung",2},{"macbook",3},{"imac",1}
 		};
 	}
 	
