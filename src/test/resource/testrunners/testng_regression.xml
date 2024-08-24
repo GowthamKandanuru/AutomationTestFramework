@@ -23,7 +23,7 @@
 
 	</test>
 
-	<!-- <test name="AccountsPage test">
+	<test name="AccountsPage test">
 	
 	<parameter name="browser" value="firefox"></parameter>
 	
@@ -52,7 +52,7 @@
 		</classes>
 
 	</test>
-	 -->
+	
 	<!-- <test name="ShoppingCart Test">
 	
 	<parameter name="browser" value="edge"></parameter>
