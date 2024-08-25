@@ -44,7 +44,7 @@ pipeline
         }
                 
      
-        stage('Publish Allure Reports') {
+        stage('Publish Allure Reports of QA Environment') {
            steps {
                 script {
                     allure([
@@ -76,7 +76,7 @@ pipeline
         
         
         
-        stage('Publish Allure Reports') {
+        stage('Publish Allure Reports of UAT environment') {
            steps {
                 script {
                     allure([
