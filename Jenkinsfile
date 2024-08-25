@@ -44,17 +44,15 @@ pipeline
         }
                 
      
-        stage('Publish Allure Reports of QA Environmentx') {
-           steps {
-                script {
-                    allure([
-                        includeProperties: false,
-                        jdk: '',
-                        properties: [],
-                        reportBuildPolicy: 'ALWAYS',
-                        results: [[path: '/allure-results']]
-                    ])
-                }
+         stage('Publish qa Extent Report'){
+            steps{
+                     publishHTML([allowMissing: false,
+                                  alwaysLinkToLastBuild: false, 
+                                  keepAll: true, 
+                                  reportDir: 'reports', 
+                                  reportFiles: 'TestExecutionReport.html', 
+                                  reportName: 'HTML qa Extent Report', 
+                                  reportTitles: ''])
             }
         }
         
@@ -69,6 +67,7 @@ pipeline
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                     git 'https://github.com/GowthamKandanuru/AutomationTestFramework.git'
                     bat "mvn clean test -Dsurefire.suiteXmlFiles=src/test/resource/testrunners/testng_regression.xml -Denv=uat"
+                    bat "mvn clean test -Dsurefire.suiteXmlFiles=src/test/resource/testrunners/testng_SanityTest.xml -Denv=uat"
                     
                 }
             }
