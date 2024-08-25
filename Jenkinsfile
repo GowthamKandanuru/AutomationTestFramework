@@ -37,14 +37,14 @@ pipeline
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                     git 'https://github.com/GowthamKandanuru/AutomationTestFramework.git'
-                    bat "mvn clean test -Dsurefire.suiteXmlFiles=src\test\resource\testrunners\testng_regression.xml -Denv=qa"
+                    bat "mvn clean test -Dsurefire.suiteXmlFiles=src/test/resource/testrunners/testng_regression.xml -Denv=qa"
                     
                 }
             }
         }
                 
      
-        stage('Publish Allure Reports of QA Environment') {
+        stage('Publish Allure Reports of QA Environmentx') {
            steps {
                 script {
                     allure([
@@ -68,7 +68,7 @@ pipeline
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                     git 'https://github.com/GowthamKandanuru/AutomationTestFramework.git'
-                    bat "mvn clean test -Dsurefire.suiteXmlFiles=src\test\resource\testrunners\testng_regression.xml -Denv=uat"
+                    bat "mvn clean test -Dsurefire.suiteXmlFiles=src/test/resource/testrunners/testng_regression.xml -Denv=uat"
                     
                 }
             }
